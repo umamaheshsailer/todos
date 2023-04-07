@@ -1,0 +1,17 @@
+.todo-list {
+    padding: 10px;
+    background-color: #f2f2f2;
+    list-style: none;
+  }
+  .todo {
+    align-items: center;
+    color: red;
+  }
+  .done {
+    text-decoration: line-through;
+    color:green
+  }
+.todos{
+  max-width: 50%;
+  margin: auto;
+}

@@ -1,0 +1,23 @@
+<div class="todos">
+    <h2>To-Do List</h2>
+    <form (submit)="addTodo()">
+      <input type="text" placeholder="Add a new todo" [(ngModel)]="newTodoText" name="Todo" />
+      <button type="submit">Add</button>
+    </form>
+    <div>
+      <label for="cars">filterTODOs:</label>
+    <select name="todos" id="todo" [(ngModel)]="showDone">
+      <option value="Done">DONE</option>
+      <option value="Todo">TODO</option>
+    </select>
+    </div>
+    <ul class="todo-list">
+      <li *ngFor="let todo of todos | filterByDone: showDone"  >
+       <div class="todo" [ngClass]="{'done': todo.done}">
+        <input type="checkbox" [(ngModel)]="todo.done" (click)="updateTodoStatus(todo)" />
+        <span >{{ todo.text }}</span>
+       </div>
+      </li>
+    </ul>
+</div>
+
